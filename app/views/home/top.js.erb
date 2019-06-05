@@ -1,9 +1,10 @@
 $(function(){
   // リストを空にする
-  $('#stores').html('');
+  $('#search-predictions').html('');
 
   // キーワードに応じて返ってくる店名と住所をリスト表示
   <% @descriptions.each do |description| %>
-    $('#stores').append("<li class='col'><%= description %></li>");
+    $('#search-predictions').append(
+      "<a href='#' class='fa list-group-item'><i class='fas fa-map-marker-alt mr-3'></i><%= description %></a>");
   <% end %>
 });

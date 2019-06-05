@@ -20,7 +20,7 @@
 
 $(document).ready(function() {
 
-  $('#search').change(function name() {
+  $('#search').keyup(function name() {
     //Ajax通信を行う
     $.ajax({
       url:"/home/top",
