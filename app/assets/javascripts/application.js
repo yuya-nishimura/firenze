@@ -14,3 +14,28 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
+
+$(document).ready(function() {
+
+  $('#search').change(function name() {
+    //Ajax通信を行う
+    $.ajax({
+      url:"/home/top",
+      type:"GET",
+      dataType:"script",
+      data: { query: $('#search').val() }
+    })
+    .done((data) => {
+      //成功した場合の処理
+      console.log("done");
+    })
+    .fail((data) => {
+      //失敗した場合の処理
+      console.log("fail");
+    })
+  });
+
+});
